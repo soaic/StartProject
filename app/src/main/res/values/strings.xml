@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">europaa-android</string>
+
+    <string name="home">Home</string>
+    <string name="classify">Product</string>
+    <string name="deals">Deals</string>
+    <string name="more">More</string>
+    <string name="cart">Cart</string>
+
+    <string name="loading">Loading&#8230;</string>
+</resources>
