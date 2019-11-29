@@ -12,12 +12,11 @@ import android.widget.LinearLayout;
 import androidx.annotation.ColorInt;
 import androidx.annotation.DrawableRes;
 
-import com.soaic.startproject.R;
-import com.soaic.startproject.databinding.TitlebarViewBinding;
-import com.soaic.startproject.utils.ViewUtil;
 import com.soaic.libcommon.utils.KeyboardUtils;
 import com.soaic.libcommon.utils.StatusBarCompat;
 import com.soaic.libcommon.utils.Utils;
+import com.soaic.startproject.R;
+import com.soaic.startproject.databinding.TitlebarViewBinding;
 
 /**
  * Created by nix on 16/1/2.
@@ -67,7 +66,7 @@ public class Titlebar extends LinearLayout implements View.OnClickListener {
         LinearLayout.LayoutParams params2 = new LayoutParams(LayoutParams.MATCH_PARENT, statusBarHeight);
         mBinding.statusbarPadding.setLayoutParams(params2);
 
-        mBinding.rootView.setBackgroundResource(ViewUtil.getTitlebarBackground());
+        mBinding.rootView.setBackgroundResource(R.drawable.titlebar_bg);
 
         if (attrs != null) {
             final TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.Titlebar, 0, 0);

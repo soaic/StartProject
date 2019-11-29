@@ -1,19 +1,26 @@
 package com.soaic.libcommon.utils;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.net.Uri;
 import android.os.Build;
 import android.os.LocaleList;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 
+import com.soaic.libcommon.bean.AppInfo;
+
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 public class AppUtils {
@@ -91,4 +98,37 @@ public class AppUtils {
         return result;
     }
 
+    /**
+     * 获取本机所有邮件App
+     * @return apps
+     */
+    public static List<AppInfo> getMailApps(Context context) {
+        List<AppInfo> mApps = new ArrayList<>();
+        Uri uri = Uri.parse("mailto:");
+        Intent intent = new Intent(Intent.ACTION_SENDTO, uri);
+        List<ResolveInfo> resolveInfos = context.getPackageManager().queryIntentActivities(intent, PackageManager.GET_RESOLVED_FILTER);
+
+        AppInfo appInfo;
+        for (ResolveInfo resolveInfo : resolveInfos) {
+            appInfo = new AppInfo();
+            appInfo.icon = resolveInfo.loadIcon(context.getPackageManager());
+            appInfo.label = resolveInfo.loadLabel(context.getPackageManager()).toString();
+            appInfo.packageName = resolveInfo.activityInfo.packageName;
+            mApps.add(appInfo);
+        }
+        return mApps;
+    }
+
+    /**
+     * 通过 packageName 跳转app
+     * @param packageName 包名
+     */
+    public static void goAppByPackageName(Context context, String packageName) {
+        if (TextUtils.isEmpty(packageName)) {
+            return;
+        }
+        Intent intent = context.getPackageManager().getLaunchIntentForPackage(packageName);
+        if (intent != null)
+            context.startActivity(intent);
+    }
 }

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.soaic.libcommon.weight.recyclerview.decoration.DividerItemDecoration
 import com.soaic.startproject.databinding.HomeFragmentBinding
 import com.soaic.startproject.mvp.presenter.TestPresenter
 import com.soaic.startproject.mvp.presenter.impl.TestPresenterImpl
@@ -36,6 +37,8 @@ class HomeFragment : BasicFragment(), ITestView {
     private fun initView() {
         testPresent = TestPresenterImpl(this)
         mBinding.testRecycleView.layoutManager = LinearLayoutManager(context)
+        mBinding.testRecycleView.addItemDecoration(
+            DividerItemDecoration.newBuilder().build())
         mAdapter = TestAdapter(context, mData)
         mBinding.testRecycleView.adapter = mAdapter
         testPresent.test("iphone")

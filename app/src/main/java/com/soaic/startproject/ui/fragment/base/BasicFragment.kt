@@ -38,7 +38,7 @@ abstract class BasicFragment : Fragment() {
 
 
     /** 显示加载对话框  */
-    fun showProgressDialog() {
+    fun showLoading() {
         if (loadingDialog == null && activity != null) {
             loadingDialog = Dialog(activity!!, R.style.customDialogStyle)
             loadingDialog!!.setContentView(R.layout.dialog_custom_loading)
@@ -50,7 +50,7 @@ abstract class BasicFragment : Fragment() {
     }
 
     /** 隐藏加载对话框  */
-    fun hideProgressDialog() {
+    fun hideLoading() {
         if (loadingDialog != null && loadingDialog!!.isShowing) {
             loadingDialog!!.dismiss()
         }

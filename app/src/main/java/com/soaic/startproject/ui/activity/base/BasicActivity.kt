@@ -50,7 +50,7 @@ abstract class BasicActivity : AppCompatActivity(), AndroidBug5497Workaround.OnK
     }
 
     /** 显示加载对话框  */
-    fun showProgressDialog() {
+    fun showLoading() {
         if (loadingDialog == null) {
             loadingDialog = Dialog(this, R.style.customDialogStyle)
         }
@@ -62,15 +62,15 @@ abstract class BasicActivity : AppCompatActivity(), AndroidBug5497Workaround.OnK
             loadingDialog!!.show()
     }
 
-    fun showProgressDialog(isDim: Boolean) {
-        showProgressDialog()
+    fun showLoading(isDim: Boolean) {
+        showLoading()
         if (isDim) {
             loadingDialog?.window?.setDimAmount(0f)
         }
     }
 
     /** 隐藏加载对话框  */
-    fun hideProgressDialog() {
+    fun hideLoading() {
         if (loadingDialog != null && loadingDialog!!.isShowing) {
             loadingDialog!!.dismiss()
         }

@@ -12,13 +12,15 @@ class TestPresenterImpl(private var mView: ITestView) : TestPresenter {
     private var mTestModel: TestModel = TestModelImpl()
 
     override fun test(str: String) {
+        mView.showLoading()
         mTestModel.test(str, object: HttpCallback<TestResponse> {
             override fun onSuccess(t: TestResponse) {
+                mView.hideLoading()
                 mView.updateUI(t)
             }
 
             override fun onFailure(err: Throwable) {
-
+                mView.hideLoading()
             }
         })
     }

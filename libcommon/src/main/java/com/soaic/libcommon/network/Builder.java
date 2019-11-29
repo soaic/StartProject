@@ -16,7 +16,7 @@ public class Builder {
     LinkedHashMap<String, String> params = new LinkedHashMap<>(); //LinkedHashMap顺序排列
     LinkedHashMap<String, RequestFile> bodyParams = new LinkedHashMap<>();
     LinkedHashMap<String, String> headers = new LinkedHashMap<>();
-    HttpRequest mRequest;
+    private HttpRequest mRequest;
     String method = "get";
     static String GET = "get";
     static String POST = "post";
