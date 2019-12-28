@@ -37,8 +37,7 @@ class HomeFragment : BasicFragment(), ITestView {
     private fun initView() {
         testPresent = TestPresenterImpl(this)
         mBinding.testRecycleView.layoutManager = LinearLayoutManager(context)
-        mBinding.testRecycleView.addItemDecoration(
-            DividerItemDecoration.newBuilder().build())
+        mBinding.testRecycleView.addItemDecoration(DividerItemDecoration.newBuilder().build())
         mAdapter = TestAdapter(context, mData)
         mBinding.testRecycleView.adapter = mAdapter
         testPresent.test("iphone")
