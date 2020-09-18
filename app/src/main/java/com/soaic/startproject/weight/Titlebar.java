@@ -66,7 +66,8 @@ public class Titlebar extends LinearLayout implements View.OnClickListener {
         LinearLayout.LayoutParams params2 = new LayoutParams(LayoutParams.MATCH_PARENT, statusBarHeight);
         mBinding.statusbarPadding.setLayoutParams(params2);
 
-        mBinding.rootView.setBackgroundResource(R.drawable.titlebar_bg);
+        //mBinding.rootView.setBackgroundResource(R.drawable.titlebar_bg);
+        mBinding.rootView.setBackgroundColor(getResources().getColor(R.color.title_bar));
 
         if (attrs != null) {
             final TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.Titlebar, 0, 0);

@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">StartProject</string>
 
-    <string name="home">Home</string>
-    <string name="classify">Product</string>
-    <string name="deals">Deals</string>
-    <string name="more">More</string>
-    <string name="cart">Cart</string>
+    <string name="home">主页</string>
+    <string name="classify">类别</string>
+    <string name="deals">消息</string>
+    <string name="more">更多</string>
+    <string name="cart">购物车</string>
 
     <string name="loading">Loading&#8230;</string>
 </resources>

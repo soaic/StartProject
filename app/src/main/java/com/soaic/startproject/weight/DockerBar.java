@@ -69,7 +69,7 @@ public class DockerBar extends LinearLayout {
         for (int i = 0; i < mItems.size(); i++) {
             final DockerItem item = mItems.get(i);
             DockerItemBinding binding = DockerItemBinding.inflate(inflater, mDockerBarBinding.dockerList, false);
-            binding.icon.setImageResource(item.getIconRes());
+            //binding.icon.setImageResource(item.getIconRes());
             binding.title.setText(item.getTextRes());
             binding.badgeView.setHideOnNull(true);
 
