@@ -19,6 +19,11 @@
             android:layout_height="wrap_content"
             android:text="test"/>
 
+        <ImageView
+            android:id="@+id/testImage"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            />
     </LinearLayout>
 
 </layout>

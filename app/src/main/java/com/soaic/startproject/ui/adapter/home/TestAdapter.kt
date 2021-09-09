@@ -12,7 +12,7 @@ class TestAdapter(private var context: Context?,
     BasicAdapter<BaseBindingHolder<TestHomeItemBinding>>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseBindingHolder<TestHomeItemBinding> {
-        val view = TestHomeItemBinding.inflate(LayoutInflater.from(context),null, false)
+        val view = TestHomeItemBinding.inflate(LayoutInflater.from(context),parent, false)
         return BaseBindingHolder.createHolder(view)
     }
 
